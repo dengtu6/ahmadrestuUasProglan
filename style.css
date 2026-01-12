@@ -1,0 +1,554 @@
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-purple: #818cf8;
+    --accent-green: #4ade80;
+    --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.highlight {
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn.primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+}
+
+.btn.secondary {
+    border: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+}
+
+.btn.secondary:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.hero-visual {
+    width: 400px;
+    /* Base width */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Placeholder for canvas/animation */
+}
+
+/* Features */
+.features-section {
+    padding: 5rem 5%;
+    background: var(--bg-card);
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Labs Section */
+.labs-section {
+    padding: 5rem 5%;
+}
+
+.labs-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.labs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.lab-card {
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: #2d3748;
+}
+
+.lab-card:hover {
+    transform: scale(1.02);
+}
+
+.lab-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.lab-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s;
+}
+
+/* Placeholder gradients for lab bgs if no images */
+.physics .lab-bg {
+    background: linear-gradient(45deg, #1a202c, #2c5282);
+}
+
+.chemistry .lab-bg {
+    background: linear-gradient(45deg, #1a202c, #276749);
+}
+
+.btn-lab {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+/* Simulation Overlay */
+.simulation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.simulation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-quiz {
+    background: var(--accent-purple);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-quiz:hover {
+    background: #6366f1;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    color: var(--text-primary);
+}
+
+.simulation-workspace {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    height: 100%;
+    overflow: hidden;
+    /* Prevent double scroll */
+}
+
+#sim-canvas {
+    flex: 1;
+    /* Takes all remaining space */
+    background: #000;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    /* Important for flex container to shrink propery */
+}
+
+.sim-controls {
+    flex: 0 0 400px;
+    /* Fixed width, no grow, no shrink */
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 2002;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separator Visual */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid var(--accent-blue);
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.btn-option {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.btn-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-blue);
+}
+
+.btn-option.correct {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: var(--accent-green);
+}
+
+.btn-option.wrong {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+}
+
+#quiz-feedback {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+}
+
+
+/* Method Section (Timeline) */
+.method-section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.timeline-item {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 250px;
+    position: relative;
+    border-top: 5px solid var(--accent-purple);
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-purple);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step-content h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-blue);
+}
+
+/* Controls Styles Enhanced */
+.control-group {
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    /* Slight box for contrast */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Standard Reliable Range Slider */
+.control-group input[type="range"] {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    accent-color: var(--accent-blue);
+    /* Supported in modern browsers */
+    cursor: pointer;
+    margin-top: 10px;
+    -webkit-appearance: auto;
+    /* Reset to default */
+    appearance: auto;
+}
+
+/* Reset any custom thumb styles that might conflict */
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    box-shadow: none;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: auto;
+    height: auto;
+    border: none;
+    background: auto;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    margin-top: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-visual {
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* Mobile menu implementation later if needed */
+    }
+
+    .simulation-workspace {
+        flex-direction: column;
+    }
+
+    #sim-canvas {
+        flex: 1;
+        min-height: 300px;
+    }
+
+    .sim-controls {
+        flex: 1;
+    }
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Lab Simulation - Tingkatkan IQ & Kognitif</title>
+    <meta name="description"
+        content="Platform edukasi simulasi fisika dan kimia interaktif untuk meningkatkan kemampuan kognitif anak-anak dan dewasa.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">SciLab<span class="highlight">.Sim</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#features">Fitur</a></li>
+            <li><a href="#labs">Laboratorium</a></li>
+            <li><a href="#method">Metode Ilmiah</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Eksplorasi Sains <br> <span class="gradient-text">Tingkatkan Kecerdasan</span></h1>
+                <p>Simulasi interaktif fisika dan kimia yang dirancang untuk melatih kemampuan analisis dan kognitif
+                    Anda.</p>
+                <div class="hero-buttons">
+                    <a href="#labs" class="btn primary">Mulai Eksperimen</a>
+                    <a href="#method" class="btn secondary">Pelajari Metodenya</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- 3D Abstract Molecule or Atom Animation Container -->
+                <div class="atom-container" id="atom-visual"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Kenapa Memilih SciLab?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🧠</div>
+                    <h3>Asah Kognitif</h3>
+                    <p>Latihan otak melalui pemecahan masalah fisika dan logika reaksi kimia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✨</div>
+                    <h3>Visual Interaktif</h3>
+                    <p>Grafis memukau yang membuat belajar sains menjadi menyenangkan dan nyata.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔬</div>
+                    <h3>Akurasi Ilmiah</h3>
+                    <p>Simulasi yang didasarkan pada prinsip-prinsip sains yang nyata dan teruji.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Labs Selection -->
+        <section id="labs" class="labs-section">
+            <h2>Pilih Laboratorium</h2>
+            <div class="labs-container">
+                <!-- Physics -->
+                <div class="lab-card physics" onclick="openLab('pendulum')">
+                    <div class="lab-content">
+                        <h3>Pendulum</h3>
+                        <p>Fisika: Gravitasi & Gerak</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #3b82f6);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('projectile')">
+                    <div class="lab-content">
+                        <h3>Gerak Parabola</h3>
+                        <p>Fisika: Meriam & Sudut</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #60a5fa);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('circuits')">
+                    <div class="lab-content">
+                        <h3>Rangkaian Listrik</h3>
+                        <p>Fisika: Hukum Ohm</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #93c5fd);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('gravity')">
+                    <div class="lab-content">
+                        <h3>Gravitasi Planet</h3>
+                        <p>Fisika: Orbit & Satelit</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #8b5cf6);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('pressure')">
+                    <div class="lab-content">
+                        <h3>Tekanan Hidrostatis</h3>
+                        <p>Fisika: Kedalaman Air</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #0ea5e9);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('pulley')">
+                    <div class="lab-content">
+                        <h3>Sistem Katrol</h3>
+                        <p>Fisika: Keuntungan Mekanis</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #f59e0b);"></div>
+                </div>
+                <div class="lab-card physics" onclick="openLab('quantum')">
+                    <div class="lab-content">
+                        <h3>Mekanika Kuantum</h3>
+                        <p>Fisika: Celah Ganda</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #d8b4fe);"></div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="lab-card chemistry" onclick="openLab('mixing')">
+                    <div class="lab-content">
+                        <h3>Percampuran Zat</h3>
+                        <p>Kimia: Difusi Partikel</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #10b981);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('reaction')">
+                    <div class="lab-content">
+                        <h3>Laju Reaksi</h3>
+                        <p>Kimia: Efek Suhu</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #34d399);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('amylase')">
+                    <div class="lab-content">
+                        <h3>Aktivitas Enzim</h3>
+                        <p>Kimia: Kunci & Gembok</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #6ee7b7);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('purification')">
+                    <div class="lab-content">
+                        <h3>Pemurnian Air</h3>
+                        <p>Kimia: Filtrasi</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #06b6d4);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('redox')">
+                    <div class="lab-content">
+                        <h3>Reaksi Redoks</h3>
+                        <p>Kimia: Sel Galvani</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #f97316);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('electrolysis')">
+                    <div class="lab-content">
+                        <h3>Elektrolisis</h3>
+                        <p>Kimia: Pemecahan Air</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #eab308);"></div>
+                </div>
+                <div class="lab-card chemistry" onclick="openLab('diffusion')">
+                    <div class="lab-content">
+                        <h3>Difusi Gas</h3>
+                        <p>Kimia: Hukum Graham</p>
+                        <button class="btn-lab">Mulai</button>
+                    </div>
+                    <div class="lab-bg" style="background: linear-gradient(45deg, #1e293b, #a855f7);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulation Modal/Container (Hidden by default) -->
+        <div id="simulation-overlay" class="simulation-overlay hidden">
+            <div class="simulation-header">
+                <h2 id="sim-title">Laboratorium</h2>
+                <div class="header-controls">
+                    <button class="btn-quiz" onclick="startQuiz()">📝 Kuis</button>
+                    <button class="btn-close" onclick="closeLab()">✕</button>
+                </div>
+            </div>
+            <div class="simulation-workspace">
+                <canvas id="sim-canvas"></canvas>
+                <div class="sim-controls" id="sim-controls">
+                    <!-- Controls injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Modal -->
+        <div id="quiz-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <h2 id="quiz-question">Pertanyaan Kuis</h2>
+                <div id="quiz-options" class="quiz-options">
+                    <!-- Options injected via JS -->
+                </div>
+                <p id="quiz-feedback"></p>
+                <button class="btn secondary" onclick="closeQuiz()">Tutup</button>
+            </div>
+        </div>
+        <!-- Scientific Method Section -->
+        <section id="method" class="method-section">
+            <h2>Metode Ilmiah</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Observasi</h3>
+                        <p>Amati fenomena alam di sekitarmu dan temukan pola atau keanehan yang menarik.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Hipotesis</h3>
+                        <p>Buat dugaan sementara atau perkiraan jawaban berdasarkan pengamatan awal.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Eksperimen</h3>
+                        <p>Lakukan percobaan (seperti di SciLab ini!) untuk menguji apakah hipotesis benar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Analisis</h3>
+                        <p>Kumpulkan data dan pelajari hasilnya. Apakah sesuai dengan prediksi?</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Kesimpulan</h3>
+                        <p>Tarik kesimpulan akhir. Jika hipotesis salah, jangan menyerah! Coba lagi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SciLab Sim. Mengembangkan Potensi Kognitif Melalui Sains.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
